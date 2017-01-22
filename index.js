@@ -8,7 +8,7 @@ module.exports = (arg = 'console') => {
   winston.loggers.add('console', {
     console: {
       json: true,
-      stringify: true,
+      stringify: JSON.stringify,
       timestamp,
     },
   });
@@ -17,11 +17,13 @@ module.exports = (arg = 'console') => {
   winston.loggers.add('file', {
     console: {
       json: true,
-      stringify: true,
+      stringify: JSON.stringify,
       timestamp,
     },
     file: {
       filename: 'targetdummy.log',
+      json: true,
+      stringify: JSON.stringify,
       timestamp,
     },
   });
