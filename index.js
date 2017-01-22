@@ -33,7 +33,7 @@ module.exports = (arg = 'console', filename = 'targetdummy.log') => {
   const request_id = uuid.v1();
 
   return {
-    info: msg => logger.log('info', msg, { request_id }),
-    error: msg => logger.log('error', msg, { request_id }),
+    info: msg => logger.log('info', '%j', msg, { request_id }),
+    error: msg => logger.log('error', '%j', msg, { request_id }),
   };
 };

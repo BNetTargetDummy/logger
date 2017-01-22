@@ -21,5 +21,5 @@ logToFile.info(objectToBeLogged); // outputs to console and persists to `targetd
 
 **Result**
 ```json
-{"request_id":"72e118f0-e057-11e6-8fda-af6458b82cef","level":"info","message":"{ data: 'test' }","timestamp":"2017-01-22T04:01:27.554Z"}
+{"request_id":"a7d37d00-e066-11e6-afcb-452332f8cf95","level":"info","message":"{\"data\":\"test\"}","timestamp":"2017-01-22T05:50:18.834Z"}
 ```
