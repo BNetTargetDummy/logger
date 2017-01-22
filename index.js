@@ -1,14 +1,14 @@
 const winston = require('winston').cli();
 const uuid = require('uuid');
 
-module.exports = (arg = 'console') => {
-  const timestamp = (new Date()).toLocaleTimeString();
+module.exports = (arg = 'console', filename = 'targetdummy.log') => {
+  const timestamp = Date.now();
 
   // 'console' logger only outputs to the command line.
   winston.loggers.add('console', {
     console: {
       json: true,
-      stringify: JSON.stringify,
+      stringify: true,
       timestamp,
     },
   });
@@ -17,14 +17,14 @@ module.exports = (arg = 'console') => {
   winston.loggers.add('file', {
     console: {
       json: true,
-      stringify: JSON.stringify,
+      stringify: true,
       timestamp,
     },
     file: {
-      filename: 'targetdummy.log',
       json: true,
-      stringify: JSON.stringify,
+      stringify: true,
       timestamp,
+      filename,
     },
   });
 
